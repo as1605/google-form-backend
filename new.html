@@ -5,9 +5,14 @@
     </title>
   </head>
   <body>
-    <input id="inp_name"/>
-    <textarea id="inp_body" rows="5" cols="80" />
-    <button id="btn_submit"/>
+    <a href="index.html">Home</a>
+    <a href="new.html">New Entry</a>
+    <br>
+    <input id="inp_name" placeholder="Name"/>
+    <br>
+    <textarea id="inp_body" rows="24" cols="80"></textarea>
+    <br>
+    <button id="btn_submit">Submit</button>
     <script>
       document.querySelector("button#btn_submit").addEventListener("click", () => {
         let inp_name = document.querySelector("input#inp_name").value;
