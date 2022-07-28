@@ -1,0 +1,27 @@
+<html>
+  <head>
+    <title>
+      Blog | New Entry
+    </title>
+  </head>
+  <body>
+    <input id="inp_name"/>
+    <textarea id="inp_body" rows="5" cols="80" />
+    <button id="btn_submit"/>
+    <script>
+      document.querySelector("button#btn_submit").addEventListener("click", () => {
+        let inp_name = document.querySelector("input#inp_name").value;
+        let inp_body = document.querySelector("textarea#inp_body").value.replaceAll("\t", "    ");
+        fetch("https://docs.google.com/forms/u/0/d/e/1FAIpQLSddvBY56vtKWGSCwa6LeNdm9hzJRJAX7AyzRr0zPID-4uQI0Q/formResponse", {
+          "headers": {
+            "content-type": "application/x-www-form-urlencoded",
+          },
+          "body": `entry.246648158=${inp_name}&entry.889207615=${inp_body}`,
+          "mode" : "no-cors",
+          "method": "POST",
+        }).then(_ => location.href="index.html");
+      }
+    </script>
+  </body>
+</html>
+      
